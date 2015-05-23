@@ -7,11 +7,10 @@ sudo apt-get install -y git gitk git-gui \
 
 mkdir $HOME/{bin,apps,clones}
 ## export PATH=$PATH:$HOME/bin
-# I think this should be at .profile
-## set PATH so it includes user's private bin if it exists
-#if [ -d "$HOME/bin" ] ; then
-#    PATH="$HOME/bin:$PATH"
-#fi
+# I think this should be at .profile, but .bashrc is not loaded yet
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
 ln -s Desktop desk
 ln -s Downloads down
 
