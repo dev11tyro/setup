@@ -5,7 +5,7 @@ sudo apt-get install -y git gitk git-gui \
     tmux guake vim emacs htop tree curl \
     build-essential
 
-mkdir $HOME/{bin, apps, clones}
+mkdir $HOME/{bin,apps,clones}
 ## export PATH=$PATH:$HOME/bin
 # I think this should be at .profile
 ## set PATH so it includes user's private bin if it exists
@@ -44,4 +44,14 @@ ln -sb dotfiles/.screenrc .
 ln -sb dotfiles/.bash_profile .
 ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
-ln -sf dotfiles/.emacs.d .
+
+ln -sf dotfiles/emacs-live .emacs.d
+ln -sb dotfiles/.emacs-live.el .
+
+ln -sb dotfiles/.tmux-solarized.conf .tmux.conf
+ln -sb dotfiles/.vimrc .
+ln -sf dotfiles/.vim .
+
+ln -sb dotfiles/.xmodmaprc .
+cp dotfiles/bin/swapcapsalt bin/
+swapcapsalt
