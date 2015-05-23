@@ -1,6 +1,6 @@
 #!/bin/bash
 # Simple setup.sh for configuring Ubuntu 12.04 LTS EC2 instance
-# for headless setup. 
+# for headless setup.
 
 # Install nvm: node-version manager
 # https://github.com/creationix/nvm
@@ -39,10 +39,19 @@ fi
 if [ -d .emacs.d/ ]; then
     mv .emacs.d .emacs.d~
 fi
-git clone https://github.com/startup-class/dotfiles.git
+git clone https://github.com/duot/dotfiles.git
 ln -sb dotfiles/.screenrc .
 ln -sb dotfiles/.bash_profile .
 ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
-ln -sf dotfiles/.emacs.d .
 
+ln -sf dotfiles/emacs-live .emacs.d
+ln -sb dotfiles/.emacs-live.el .
+
+ln -sb dotfiles/.tmux-solarized.conf .tmux.conf
+ln -sb dotfiles/.vimrc .
+ln -sf dotfiles/.vim .
+
+ln -sb dotfiles/.xmodmaprc .
+cp dotfiles/bin/swapcapsalt bin/
+swapcapsalt
